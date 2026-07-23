@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ashwin Devre | Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        :root {
+            --blue: #2563eb;
+            --dark: #0f172a;
+            --text: #334155;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--dark);
+            background: white;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            min-height: 72px;
+            background: rgba(255,255,255,.95) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        .navbar-brand span {
+            color: var(--blue);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark) !important;
+            margin-left: 12px;
+            transition: .2s;
+        }
+
+        .nav-link:hover {
+            color: var(--blue) !important;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+
+            background:
+                radial-gradient(circle at 85% 25%,
+                rgba(37,99,235,.12),
+                transparent 30%),
+                linear-gradient(135deg,#ffffff,#f8fbff);
+        }
+
+        .small-title {
+            color: var(--blue);
+            font-weight: 800;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px,7vw,90px);
+            font-weight: 800;
+            letter-spacing: -4px;
+            line-height: 1;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: var(--gray);
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 22px 0 30px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .btn {
+            border-radius: 10px;
+            font-weight: 700;
+            padding: 12px 20px;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+        }
+
+
+        /* =========================
+           SOCIAL
+        ========================== */
+
+        .social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 45px;
+            height: 45px;
+
+            border: 1px solid var(--border);
+            border-radius: 50%;
+
+            margin-right: 8px;
+
+            color: var(--dark);
+            font-size: 20px;
+            text-decoration: none;
+
+            background: white;
+
+            transition: .25s;
+        }
+
+        .social a:hover {
+            background: var(--blue);
+            color: white;
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================== */
+
+        .photo-box {
+            width: 380px;
+            max-width: 90%;
+            height: 470px;
+
+            margin: auto;
+
+            border-radius: 30px;
+            overflow: hidden;
+
+            border: 8px solid white;
+
+            box-shadow:
+            0 25px 70px rgba(15,23,42,.18);
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: 50% 72%;
+
+            transform: scale(1.35);
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================== */
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: var(--blue);
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(32px,5vw,45px);
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .light-section {
+            background: var(--light);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-box {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            padding: 35px;
+
+            box-shadow:
+            0 10px 30px rgba(15,23,42,.05);
+        }
+
+        .about-box p {
+            margin: 0;
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skill-card {
+            background: white;
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 25px 10px;
+
+            text-align: center;
+
+            font-size: 17px;
+            font-weight: 800;
+
+            transition: .25s;
+        }
+
+        .skill-card i {
+            display: block;
+            color: var(--blue);
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #93c5fd;
+
+            box-shadow:
+            0 15px 35px rgba(37,99,235,.12);
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .project-card {
+            height: 100%;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            padding: 32px;
+
+            background: white;
+
+            transition: .25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+            0 15px 40px rgba(15,23,42,.09);
+        }
+
+        .project-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: #eff6ff;
+            color: var(--blue);
+
+            font-size: 26px;
+
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .project-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .project-card a {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-card {
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            padding: 35px;
+        }
+
+        .education-card .year {
+            color: var(--blue);
+            font-weight: 800;
+        }
+
+        .education-card h3 {
+            font-weight: 800;
+            margin-top: 10px;
+        }
+
+        .education-card p {
+            color: var(--gray);
+            margin: 0;
+        }
+
+
+        /* =========================
+           CERTIFICATES
+        ========================== */
+
+        .certificate-card {
+            height: 100%;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            padding: 30px;
+
+            background: white;
+
+            transition: .25s;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+            0 15px 40px rgba(15,23,42,.09);
+        }
+
+        .certificate-card i {
+            color: var(--blue);
+            font-size: 35px;
+        }
+
+        .certificate-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-top: 18px;
+        }
+
+        .certificate-card p {
+            color: var(--gray);
+        }
+
+        .certificate-card a {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            color: white;
+
+            background:
+            linear-gradient(135deg,#0f172a,#1e3a8a);
+
+            border-radius: 30px;
+
+            padding: 70px 25px;
+
+            text-align: center;
+
+            box-shadow:
+            0 25px 60px rgba(15,23,42,.18);
+        }
+
+        .contact-box > span {
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(32px,5vw,50px);
+            font-weight: 800;
+
+            margin: 15px 0;
+        }
+
+        .contact-box p {
+            color: #cbd5e1;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 30px;
+            color: var(--gray);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media(max-width:991px) {
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .photo-box {
+                height: 420px;
+            }
+
+        }
+
+        @media(max-width:576px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .photo-box {
+                height: 360px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<nav class="navbar navbar-expand-lg fixed-top border-bottom">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            Ashwin<span>.</span>
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#certificates">Certificates</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-7">
+
+                <span class="small-title">
+                    HELLO, I'M
+                </span>
+
+                <h1>
+                    Ashwin <span>Devre</span>
+                </h1>
+
+                <h2>
+                    BCA Student & Web Developer
+                </h2>
+
+                <p>
+                    I build clean, responsive and user-friendly
+                    websites while continuously improving my
+                    development skills through practical projects.
+                </p>
+
+
+                <div class="d-flex flex-wrap gap-3 hero-buttons">
+
+                    <a href="#projects"
+                       class="btn btn-primary btn-lg">
+
+                        View Projects
+
+                    </a>
+
+
+                    <a href="#contact"
+                       class="btn btn-outline-dark btn-lg">
+
+                        Contact Me
+
+                    </a>
+
+
+                    <a href="assets/Ashwin_Devre_Resume.pdf"
+                       download
+                       class="btn btn-outline-primary btn-lg">
+
+                        <i class="bi bi-download me-1"></i>
+
+                        Download Resume
+
+                    </a>
+
+                </div>
+
+
+                <div class="social mt-4">
+
+                    <a href="https://github.com/AshwinDevre"
+                       target="_blank">
+
+                        <i class="bi bi-github"></i>
+
+                    </a>
+
+
+                    <a href="mailto:ashwindevre499@gmail.com">
+
+                        <i class="bi bi-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+                <div class="photo-box">
+
+                    <img src="assets/profile.jpg"
+                         alt="Ashwin Devre">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>ABOUT ME</span>
+
+            <h2>
+                Building skills, one project at a time.
+            </h2>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <p>
+                I'm a BCA student and aspiring web developer
+                passionate about creating clean, responsive and
+                user-friendly web experiences.
+
+                I enjoy turning ideas into practical websites,
+                learning new technologies and strengthening my
+                programming fundamentals.
+
+                My current focus is web development, with a growing
+                interest in modern development tools and artificial
+                intelligence.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section id="skills" class="light-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>MY SKILLS</span>
+
+            <h2>
+                Technologies I work with
+            </h2>
+
+        </div>
+
+
+        <div class="row g-3">
+
+
+            <div class="col-6 col-md-4 col-lg">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-html"></i>
+
+                    HTML
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-css"></i>
+
+                    CSS
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-bootstrap"></i>
+
+                    Bootstrap
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-js"></i>
+
+                    JavaScript
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-code-square"></i>
+
+                    Python
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-code-slash"></i>
+
+                    C
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-braces"></i>
+
+                    C++
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>PROJECTS</span>
+
+            <h2>Things I've built</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+
+                        <i class="bi bi-window"></i>
+
+                    </div>
+
+                    <h3>
+                        Responsive Web Projects
+                    </h3>
+
+                    <p>
+                        Responsive web interfaces created while
+                        practicing HTML, CSS, Bootstrap and JavaScript.
+                    </p>
+
+                    <span class="badge text-bg-primary">
+
+                        Frontend Development
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+
+                        <i class="bi bi-code-slash"></i>
+
+                    </div>
+
+                    <h3>
+                        More Projects Coming Soon
+                    </h3>
+
+                    <p>
+                        I'm actively building new projects.
+                        Source code and live demos will be added
+                        here as they are completed.
+                    </p>
+
+
+                    <a href="https://github.com/AshwinDevre"
+                       target="_blank">
+
+                        Visit GitHub
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION
+========================== -->
+
+<section id="education" class="light-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>EDUCATION</span>
+
+            <h2>Academic Journey</h2>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="year">
+
+                Expected Graduation — 2027
+
+            </div>
+
+            <h3>
+                Bachelor of Computer Applications (BCA)
+            </h3>
+
+            <p>
+                Morden College of BCA, Sonai
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CERTIFICATES
+========================== -->
+
+<section id="certificates">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>CERTIFICATES</span>
+
+            <h2>
+                Learning beyond the classroom
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="certificate-card">
+
+                    <i class="bi bi-patch-check"></i>
+
+                    <h3>
+                        Introduction to Generative AI
+                    </h3>
+
+                    <p>
+                        23 July 2026
+                    </p>
+
+
+                    <a href="assets/generative-ai.pdf"
+                       target="_blank">
+
+                        View Certificate →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="certificate-card">
+
+                    <i class="bi bi-patch-check"></i>
+
+                    <h3>
+                        Gemini for Google Workspace
+                    </h3>
+
+                    <p>
+                        16 September 2025
+                    </p>
+
+                    <a href="assets/gemini-workspace.pdf"
+                       target="_blank">
+
+                        View Certificate →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="certificate-card">
+
+                    <i class="bi bi-patch-check"></i>
+
+                    <h3>
+                        Introduction to Prompt Engineering
+                        with GitHub Copilot
+                    </h3>
+
+                    <p>
+                        17 September 2025
+                    </p>
+
+                    <a href="assets/prompt-engineering.pdf"
+                       target="_blank">
+
+                        View Certificate →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <span>
+                LET'S CONNECT
+            </span>
+
+            <h2>
+                Have an opportunity or an idea?
+            </h2>
+
+            <p>
+                I'm open to learning, collaborating and working
+                on interesting web projects.
+            </p>
+
+
+            <a href="mailto:ashwindevre499@gmail.com"
+               class="btn btn-light btn-lg">
+
+                <i class="bi bi-envelope me-2"></i>
+
+                Email Me
+
+            </a>
+
+
+            <div class="mt-4">
+
+                <p class="mb-1">
+                    <i class="bi bi-envelope"></i>
+                    ashwindevre499@gmail.com
+                </p>
+
+                <p class="mb-0">
+                    <i class="bi bi-github"></i>
+                    AshwinDevre
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container text-center">
+
+        © 2026 Ashwin Devre
+        • Built with HTML, CSS & Bootstrap
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JavaScript -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+</html>
