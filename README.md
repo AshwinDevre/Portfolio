@@ -26,9 +26,6 @@ This portfolio is designed to present my work, technical skills, projects, and c
 - Contact Section
 - Clean and Simple User Interface
 
-## 📸 Project Preview
-
-A preview of the portfolio website will be displayed here.
 
 ## 🔒 Source Code
 
